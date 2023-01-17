@@ -17,7 +17,10 @@ const CONFIG = {
    SERVER: {
       PORT: getEnvVariable('PORT', '3001'),
       ENV: getEnvVariable('NODE_ENV', 'development')
-   }
+   },
+   CACHE : {
+      PROVIDER: getEnvVariable("CACHE_PROVIDER", "redis"),
+   },
 };
 
 export default CONFIG;
