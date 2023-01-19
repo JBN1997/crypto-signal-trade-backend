@@ -1,28 +1,28 @@
-import { RedisClientType } from "@redis/client";
-import { Strategy } from "../cache.declaration";
+import { RedisClientType } from '@redis/client';
+import { Strategy } from '../cache.declaration';
 
 class RedisStrategy implements Strategy {
-  private connection;
+   private connection;
 
-  constructor(connection: RedisClientType) {
-    this.connection = connection;
-  }
+   constructor(connection: RedisClientType) {
+      this.connection = connection;
+   }
 
-  public async get(key: string): Promise<string | null> {
-    const result = await this.connection.get(key);
-    
-    return result;
-  }
+   public async get(key: string): Promise<string | null> {
+      const result = await this.connection.get(key);
 
-  public async has(key: string): Promise<boolean> {
-    const result = await this.connection.get(key);
+      return result;
+   }
 
-    return result !== undefined && result !== null;
-  }
+   public async has(key: string): Promise<boolean> {
+      const result = await this.connection.get(key);
 
-  public async set(key: string, value: string) {
-    await this.connection.set(key, value);
-  }
+      return result !== undefined && result !== null;
+   }
+
+   public async set(key: string, value: string) {
+      await this.connection.set(key, value);
+   }
 }
 
 export default RedisStrategy;

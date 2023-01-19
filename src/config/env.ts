@@ -16,10 +16,10 @@ const getEnvVariable = (name: string, fallback: string = ''): string => {
 const CONFIG = {
    SERVER: {
       PORT: getEnvVariable('PORT', '3001'),
-      ENV: getEnvVariable('NODE_ENV', 'development')
+      ENV: getEnvVariable('NODE_ENV', 'development'),
    },
-   CACHE : {
-      PROVIDER: getEnvVariable("CACHE_PROVIDER", "redis"),
+   CACHE: {
+      PROVIDER: getEnvVariable('CACHE_PROVIDER', 'redis'),
    },
 };
 
